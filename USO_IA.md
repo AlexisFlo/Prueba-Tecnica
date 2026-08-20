@@ -71,3 +71,22 @@ Ejercicio 1
   directo, sin importarlo, asumiendo que el evaluador lo provee.
 - No revisé a fondo la estructura del reducer ni la lógica del CSV,
   son las dos partes que menos domino de este ejercicio.
+
+## Uso de IA — Ejercicio 4
+
+### Qué generé con IA
+
+- Revisé el flujo de access token y refresh token.
+- Consulté la diferencia entre jwt.decode() y jwt.verify().
+- Revisé las opciones para guardar el refresh token.
+- Pedí ayuda para mejorar algunos diagramas y explicar de forma más clara las decisiones tomadas.
+
+### Qué entendí/decidí yo
+
+ Entendí que el access token se utiliza para las peticiones normales y el refresh token para obtener uno nuevo cuando expira.
+- Identifiqué que jwt.decode() no es suficiente para validar un token y que se debe utilizar jwt.verify().
+- Decidí utilizar una cookie HttpOnly para el refresh token.
+
+## Cómo utilicé la IA
+
+- La utilicé principalmente como apoyo para revisar conceptos que no tenía completamente claros y para pulir la redacción de las explicaciones.
