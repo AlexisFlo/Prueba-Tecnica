@@ -66,3 +66,35 @@ Para el Bug 5, pensé en solo quitar la línea que causaba el problema
 (sin usar with()). No lo hice porque no arreglaba nada de raíz: si
 después se necesita mostrar las transacciones, el problema iba a
 volver a aparecer. Usar with() lo resuelve desde ahora.
+
+# Notas — Ejercicio 3
+
+## Dudas que surgieron
+- No tengo claro cómo funciona AbortController ni cómo se conecta con
+  mockFetch, por eso no lo agregué a esta entrega.
+- No entiendo a fondo el reducer (los distintos tipos de acción) ni
+  la lógica de escape de comillas del CSV — quedan como lo menos
+  dominado de este ejercicio.
+- El enunciado dice que mockFetch "está disponible", pero el código
+  que dieron solo tiene la firma vacía (sin implementación real). No
+  sé con certeza si en la evaluación real me darán una implementación
+  funcional de mockFetch, o si se espera que yo mismo la complete. Mi
+  interpretación final: como el enunciado pide "construir un
+  componente que la use" y no "implementar mockFetch", asumo que el
+  evaluador la provee — por eso el archivo de entrega no incluye mi
+  propio mock ni ningún import de él.
+
+## Supuestos que tomé
+- Exportar CSV solo con los registros visibles de la página actual
+  (no todos los que existan en el backend), según lo que pide el
+  enunciado literalmente ("registros visibles de la tabla").
+- Asumí que mockFetch estará disponible en el mismo scope donde se usa
+  el componente (import o definición externa que hará el evaluador),
+  sin que PanelTransacciones.jsx tenga que definirla ni recibirla
+  como prop.
+
+## Por qué no hay alternativa descartada aquí
+Para el AbortController no consideré ninguna alternativa: simplemente
+decidí dejarlo fuera de la entrega porque no tenía claro cómo
+implementarlo, no porque haya evaluado otra forma de resolver el
+problema y la descartara.

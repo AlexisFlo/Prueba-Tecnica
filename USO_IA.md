@@ -38,3 +38,36 @@ Ejercicio 1
 - Revisé que cada bug corregido correspondiera exactamente a la línea
   señalada en el enunciado original.
 
+
+# Uso de IA — Ejercicio 3
+
+## Qué generé con IA
+- Estructura del useReducer (estado, acciones, reducer).
+- Lógica de escape de comillas en el CSV.
+
+## Qué entendí/decidí yo
+- El flujo general del componente: tabla con columnas, filtros por
+  botones, loading, manejo de error, paginación y exportación CSV
+  como partes separadas que se conectan entre sí.
+- Detecté que el código generado recibía mockFetch como prop, cuando
+  el enunciado deja claro que la función ya está disponible
+  directamente y pide explícitamente no modificar su firma. Corregí
+  el componente para usar mockFetch directo, sin prop ni argumentos
+  extra.
+- No agregué AbortController porque no tenía una idea clara de cómo
+  integrarlo con mockFetch.
+- Al probar el componente me salió ReferenceError: mockFetch is not
+  defined, porque el archivo de entrega solo usa la función, no la
+  define. Decidí, después de revisar el enunciado, que el archivo de
+  entrega no debe importar ni definir mockFetch — se asume que el
+  evaluador la provee.
+
+## Cómo verifiqué
+- Comparé el componente contra la firma exacta del mockFetch dado en
+  el enunciado (page, estado) y corregí el mismatch que tenía.
+- Probé el componente en local usando un mockFetch de prueba con datos
+  falsos (mockFetch.jsx), pero ese archivo se dejó fuera
+  del entregable final — el componente de entrega usa mockFetch
+  directo, sin importarlo, asumiendo que el evaluador lo provee.
+- No revisé a fondo la estructura del reducer ni la lógica del CSV,
+  son las dos partes que menos domino de este ejercicio.
