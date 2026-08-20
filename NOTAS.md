@@ -98,3 +98,22 @@ Para el AbortController no consideré ninguna alternativa: simplemente
 decidí dejarlo fuera de la entrega porque no tenía claro cómo
 implementarlo, no porque haya evaluado otra forma de resolver el
 problema y la descartara.
+
+## Notas - Ejercicio 4
+- Tenía duda sobre dónde guardar el refresh token y la diferencia entre una cookie HttpOnly y localStorage.
+- La parte de comunicación entre servicios fue la que más tuve que revisar, principalmente para diferenciar el token del usuario de la identidad del servicio.
+
+## Supuestos que tomé
+
+- auth-core es el responsable de generar y renovar los tokens, como indica el enunciado.
+- El access token tiene una duración corta y el refresh token una duración mayor.
+
+## Decisiones
+
+- Elegí una cookie HttpOnly para el refresh token porque JavaScript no puede leerla directamente.
+
+- Para validar los JWT utilicé jwt.verify() en lugar de jwt.decode(), ya que decode() solo obtiene el contenido del token
+
+## Alternativas
+
+- Consideré guardar el refresh token en localStorage, pero preferí la cookie HttpOnly porque no queda disponible directamente para JavaScript.
